@@ -7,7 +7,7 @@ Solução Proposta:
 A solução consiste em uma plataforma web modular, utilizando Python para o desenvolvimento da API e MySQL como banco de dados relacional. A interface será simples e funcional, com foco em acessibilidade e usabilidade. A arquitetura será planejada para permitir escalabilidade futura, com suporte a funcionalidades como agendamento , prontuários eletrônicos seguros, notificações em tempo real e upload seguro de exames. A proposta visa melhorar a eficiência, a segurança e a experiência dos usuários por meio de uma estrutura leve, segura e de fácil manutenção.
 -                                              Requisitos Funcionais:
    -Cadastro de Pacientes:
-O sistema deve permitir o cadastro de pacientes com informações como nome, CPF, data de nascimento, endereço, telefone, alergias e histórico médico.
+O sistema deve permitir o cadastro de pacientes com informações como nome, bi, data de nascimento, endereço, telefone, alergias e histórico médico.
 O sistema deve permitir a atualização dos dados do paciente quando necessário.
   -Agendamento de Consultas:
 O paciente pode agendar consultas com médicos através do sistema.
