@@ -16,9 +16,9 @@ Including another URLconf
 """
 
 from django.urls import path
-from . import views
+from myapp.views import cadastrar_paciente  # Certifique-se de importar a função correta
 
 urlpatterns = [
-    path('cadastro-paciente/', views.cadastrar_paciente, name='cadastrar_paciente'),
+    path('', cadastrar_paciente, name='cadastrar_paciente'),  # Agora a URL raiz vai para a função cadastrar_paciente
+    path('cadastro-paciente/', cadastrar_paciente, name='cadastrar_paciente'),
 ]
-
