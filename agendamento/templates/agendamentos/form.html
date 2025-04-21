@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Novo Agendamento</title>
+</head>
+<body>
+    <h1>Novo Agendamento</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Agendar</button>
+    </form>
+    <a href="{% url 'lista_agendamentos' %}">Ver lista de agendamentos</a>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<form method="post" class="card p-4 shadow-sm border-0 mt-4">
+    {% csrf_token %}
+    
+    <div class="mb-3">
+        <label for="paciente_id" class="form-label text-brown">Paciente:</label>
+        <select name="paciente_id" class="form-select" required>
+            {% for paciente in pacientes %}
+                <option value="{{ paciente.id }}">{{ paciente.nome }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="tipo_exame" class="form-label text-brown">Tipo de Exame:</label>
+        <input type="text" name="tipo_exame" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="data_exame" class="form-label text-brown">Data do Exame:</label>
+        <input type="date" name="data_exame" class="form-control" required>
+    </div>
+
+    <div class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </div>
+</form>
+

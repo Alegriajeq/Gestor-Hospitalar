@@ -1,0 +1,26 @@
+{% extends 'home.html' %}
+
+{% block title %}Agendamentos{% endblock title %}
+
+{% block conteudo %}
+<div class="container mt-4">
+    <h2 class="mb-4">Lista de Agendamentos</h2>
+    
+    {% if agendamentos %}
+        <ul class="list-group">
+            {% for agendamento in agendamentos %}
+                <li class="list-group-item">
+                    {{ agendamento.data }} às {{ agendamento.hora }} - 
+                    Paciente: {{ agendamento.paciente.nome }} | Médico: {{ agendamento.medico.nome }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <div class="alert alert-info" role="alert">
+            Nenhum agendamento ainda.
+        </div>
+    {% endif %}
+
+    <a href="{% url 'criar_agendamento' %}" class="btn btn-primary mt-3">Novo Agendamento</a>
+</div>
+{% endblock conteudo %}

@@ -1,7 +1,7 @@
-# exames/urls.py
 from django.urls import path
-from . import views
+from .views import lista_exames, cadastrar_exame
 
 urlpatterns = [
-    # Seus padrões de URL para o app 'exames'
+    path('', lista_exames, name='lista_exames'),
+    path('novo/', cadastrar_exame, name='cadastrar_exame'),
 ]

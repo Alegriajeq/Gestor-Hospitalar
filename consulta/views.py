@@ -1,7 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
-from django.http import HttpResponse
-
-def index(request):
-    return HttpResponse("Página de Consultas")
+def lista_consultas(request):
+    return render(request, 'consulta/lista_consultas.html')

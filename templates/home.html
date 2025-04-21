@@ -5,15 +5,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clínica AGJ MedCare | {% block title %}Home{% endblock title %}</title>
-    
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+    <style>
+        body {
+            background-color: #fdf6f0; /* fundo claro com toque bege */
+            color: #4b2e2e; /* texto principal marrom escuro */
+        }
+    
+        h1, h2, h3, h4, h5, h6 {
+            color: #6b3e26; /* tons de marrom para os títulos */
+        }
+    
+        p, a, li {
+            color: #5a3b2e !important;
+        }
+    
+        .lead {
+            color: #3b2b2b !important;
+        }
+
+        /* Navbar marrom */
+        .navbar-marrom {
+            background-color: #8b5e3c;
+        }
+
+        .navbar-marrom .nav-link {
+            color: #fdf6f0 !important;
+        }
+
+        .navbar-marrom .nav-link.active {
+            font-weight: bold;
+            color: #ffffff !important;
+        }
+
+        /* Rodapé marrom */
+        footer {
+            background-color: #6b3e26;
+            color: #f8f3f0;
+        }
+
+        .messages li {
+            background-color: #f5e3d8;
+            color: #4b2e2e;
+            border: 1px solid #d3b8a3;
+        }
+
+        .btn-primary {
+            background-color: #8b5e3c;
+            border-color: #8b5e3c;
+        }
+
+        .btn-outline-secondary {
+            border-color: #8b5e3c;
+            color: #8b5e3c;
+        }
+
+        .btn-outline-secondary:hover {
+            background-color: #8b5e3c;
+            color: white;
+        }
+    </style>
+    
 </head>
 <body class="d-flex flex-column min-vh-100">
 
     {% block navegacao %}
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-marrom">
         <div class="container">
             <a class="navbar-brand" href="/">Clínica AGJ MedCare</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -38,6 +99,9 @@
                         <a class="nav-link" href="/exames/">Exames</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="/consultas/">Consultas</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="/notificacoes/">Notificações</a>
                     </li>
                 </ul>
@@ -45,10 +109,20 @@
         </div>
     </nav>
     {% endblock navegacao %}
+    
 
     {% block conteudo %}
     <!-- Conteúdo Principal -->
-    <main class="container mt-5">
+    <main class="container mt-5 mb-5">
+        <!-- Mensagens -->
+        {% if messages %}
+          <ul class="messages">
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
         <div class="text-center">
             <h1 class="display-5 mb-3">Bem-vindo à Clínica AGJ MedCare</h1>
             <p class="lead">Escolha uma das opções no menu para navegar pelo sistema.</p>
@@ -58,14 +132,14 @@
 
     {% block footer %}
     <!-- Rodapé -->
-    <footer class="bg-primary text-white text-center py-3 mt-auto">
+    <footer class="text-white text-center py-3 mt-auto">
         <div class="container">
             <p class="mb-0">&copy; {{ year|default:"2025" }} Clínica AGJ MedCare. Todos os direitos reservados.</p>
         </div>
     </footer>
     {% endblock footer %}
 
-    <!-- Bootstrap JS (opcional, para funcionalidades como navbar collapse) -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

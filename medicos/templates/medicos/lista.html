@@ -1,0 +1,23 @@
+{% extends 'home.html' %}
+
+{% block title %}Lista de Médicos{% endblock title %}
+
+{% block conteudo %}
+<div class="container mt-4">
+    <h2 class="mb-4">Lista de Médicos</h2>
+    <a href="{% url 'novo_medico' %}" class="btn btn-success mb-3">+ Novo Médico</a>
+    <ul class="list-group">
+        {% for medico in medicos %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{ medico.nome }} - {{ medico.especialidade }}
+                <span>
+                    <a href="{% url 'editar_medico' medico.id %}" class="btn btn-sm btn-warning">Editar</a>
+                    <a href="{% url 'deletar_medico' medico.id %}" class="btn btn-sm btn-danger">Excluir</a>
+                </span>
+            </li>
+        {% empty %}
+            <li class="list-group-item">Nenhum médico encontrado.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock conteudo %}

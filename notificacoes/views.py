@@ -1,8 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
-# views.py
-from django.core.mail import send_mail
+def lista_notificacoes(request):
+    return render(request, 'notificacoes/lista.html')  # ou o nome do template correto
 
-def enviar_notificacao(paciente_email, assunto, mensagem):
-    send_mail(assunto, mensagem, 'hospital@exemplo.com', [paciente_email])

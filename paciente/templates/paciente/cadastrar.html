@@ -1,64 +1,47 @@
-
 {% extends 'home.html' %}
-
-{% block title %}
-Cadastro de Paciente
-{% endblock title %}
 
 {% block conteudo %}
 <div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-lg-8">
-            <div class="card shadow-sm border-0 rounded-4 bg-light">
-                <div class="card-header bg-secondary text-white text-center rounded-top-4">
-                    <h2 class="mb-0">Cadastro de Paciente</h2>
-                </div>
-                <div class="card-body p-4">
-                    <form method="POST" novalidate>
-                        {% csrf_token %}
+    <h2 class="mb-4">Cadastrar Paciente</h2>
+    <form method="POST">
+        {% csrf_token %}
 
-                        <div class="mb-3">
-                            <label for="nome" class="form-label text-dark">Nome</label>
-                            <input type="text" class="form-control" id="nome" name="nome" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="bi" class="form-label text-dark">Número do BI</label>
-                            <input type="text" class="form-control" id="bi" name="bi" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="data_nascimento" class="form-label text-dark">Data de Nascimento</label>
-                            <input type="date" class="form-control" id="data_nascimento" name="data_nascimento" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="endereco" class="form-label text-dark">Endereço</label>
-                            <input type="text" class="form-control" id="endereco" name="endereco" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="telefone" class="form-label text-dark">Telefone</label>
-                            <input type="tel" class="form-control" id="telefone" name="telefone" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="alergias" class="form-label text-dark">Alergias</label>
-                            <input type="text" class="form-control" id="alergias" name="alergias">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="historico_medico" class="form-label text-dark">Histórico Médico</label>
-                            <textarea class="form-control" id="historico_medico" name="historico_medico" rows="4"></textarea>
-                        </div>
-
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-secondary btn-lg">Cadastrar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+        <div class="mb-3">
+            <label class="form-label">Nome:</label>
+            <input type="text" name="nome" class="form-control">
         </div>
-    </div>
+
+        <div class="mb-3">
+            <label class="form-label">BI:</label>
+            <input type="text" name="bi" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Data de Nascimento:</label>
+            <input type="date" name="data_nascimento" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Endereço:</label>
+            <input type="text" name="endereco" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Telefone:</label>
+            <input type="text" name="telefone" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Alergias:</label>
+            <input type="text" name="alergias" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Histórico:</label>
+            <textarea name="historico" class="form-control"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
 </div>
-{% endblock conteudo %}
+{% endblock %}

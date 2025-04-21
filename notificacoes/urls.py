@@ -1,7 +1,6 @@
-# notificacoes/urls.py
 from django.urls import path
 from . import views
 
 urlpatterns = [
-    # Defina suas rotas para o app 'notificacoes'
+    path('', views.lista_notificacoes, name='lista_notificacoes'),
 ]
