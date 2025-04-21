@@ -21,7 +21,8 @@ O paciente deve poder visualizar os resultados dos exames diretamente no sistema
   -Notificações e Alertas:
 O sistema deve enviar notificações para pacientes e médicos sobre consultas agendadas, exames e pagamentos pendentes.
 O sistema deve enviar alertas sobre datas de vencimento de prescrições médicas e necessidade de acompanhamento médico.
-                             Requisitos Não Funcionais:
+
+                             -Requisitos Não Funcionais:
    -Segurança:
 O sistema deve garantir a confidencialidade e integridade dos dados dos pacientes, utilizando criptografia para dados em repouso e em trânsito.
 Implementar autenticação de múltiplos fatores (MFA) para acesso ao sistema.
